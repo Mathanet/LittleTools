@@ -9,15 +9,19 @@ import sys
 According to the periodic table of elements to answer the question
 If your answer is right, nothing will be happened.
 If your answer is wrong, I'll tell you "No" then you can answer again until your answer is right
-The question may as same as the last/next one, I'll fix it one day.
 Type "skip" to skip
 Type "exit" to quit
-You can find the answer in source
+Type "answer" if you forget it
 
 Now, let's go!
 
 """
 
+
+# class Settings:
+#     def __init__(self):
+#         self.un_num_begin = 21
+#         self.un_num_end = 0
 
 class Element_table:
     def __init__(self):
@@ -39,7 +43,7 @@ class Element_table:
             15: {'name': "磷", 'symble': "P", 'valence': ''},
             16: {'name': "硫", 'symble': "S", 'valence': -2},
             17: {'name': "氯", 'symble': "Cl", 'valence': -1},
-            18: {'name': "氩", 'symble': "Ar", 'valence': ''},
+            18: {'name': "氬", 'symble': "Ar", 'valence': ''},
             19: {'name': "钾", 'symble': "K", 'valence': +1},
             20: {'name': "钙", 'symble': "Ca", 'valence': +2},
 
@@ -67,6 +71,7 @@ class Element_table:
             26, 29, 30, 47, 56, 119, 120, 121, 122,
              123, 124, 125, 126, 127, 128]
         self.q_num = 0
+        self.last_q_num = self.q_num
 
     def main(self):
         # a.get_q_list()
@@ -85,7 +90,14 @@ class Element_table:
     #     print(self.q_list)
 
     def get_and_show_question(self):
-        self.q_num = rd.choice(self.q_list)
+        while True:
+            # Make sure that the question is different from the last one
+            self.q_num = rd.choice(self.q_list)
+            if self.q_num != self.last_q_num:
+                break
+            else:
+                continue
+
         question = self.table_of_elements[self.q_num]['name']
         print(question)
 
@@ -166,4 +178,5 @@ class Element_table:
 if __name__=='__main__':
     a = Element_table()
     # a.show_q_list()
+    # b = Settings()
     a.main()
