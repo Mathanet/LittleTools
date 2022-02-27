@@ -43,7 +43,7 @@ class Element_table:
             15: {'name': "磷", 'symble': "P", 'valence': ''},
             16: {'name': "硫", 'symble': "S", 'valence': -2},
             17: {'name': "氯", 'symble': "Cl", 'valence': -1},
-            18: {'name': "氬", 'symble': "Ar", 'valence': ''},
+            18: {'name': "氩", 'symble': "Ar", 'valence': ''},
             19: {'name': "钾", 'symble': "K", 'valence': +1},
             20: {'name': "钙", 'symble': "Ca", 'valence': +2},
 
